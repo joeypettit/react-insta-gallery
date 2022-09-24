@@ -1,22 +1,27 @@
-import Axios from 'axios';
-import React, { useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
+    const [galleryList, setGalleryList] = useState(['no values yet!']);
 
-    useEffect(()=> {getGallery()}, []);
+
 
     function getGallery() {
-      Axios({
+      axios({
         method: 'GET',
         url: '/gallery/',
       }).then((response) => {
         console.log('GET completed', response.data);
-      }).catch((error) => sendStatus(500));
+        setGalleryList(response.data);
+      }).catch((error) => console.log(error));
     }
 
 
-
+    useEffect(()=> {
+      getGallery();
+    }, []);
 
 
     return (
@@ -24,7 +29,10 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList />
+        <GalleryList galleryList={galleryList}/>
+
+
+
       </div>
     );
 }
