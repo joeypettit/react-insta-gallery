@@ -1,0 +1,9 @@
+.like-btn{
+    color: transparent;
+    text-shadow: 0 0 #9b9b9b;
+}
+
+.liked{
+    background-color: lightblue;
+    text-shadow: 1px 1px #575757;
+}
