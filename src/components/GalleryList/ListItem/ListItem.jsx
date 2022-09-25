@@ -5,6 +5,9 @@ import { useState } from 'react';
 function ListItem({photo, getGallery}){
 
     const [isLiked, setIsLiked] = useState(false);
+    const [descriptShown, setDescriptShown] = useState(false);
+
+
 
 
     
@@ -21,20 +24,23 @@ function ListItem({photo, getGallery}){
         })
 
     }
-    console.log(isLiked);
 
     return (
         <>
             <li className = "pic-list-item">
-                <div className="pic-holder">
-                    <div className="pic-descript ">{photo.description}</div>
-                    <img className="pic" src={photo.path}/>
+                {/* conditionally render pic description */}
+                <div className="pic-holder" onClick={()=> setDescriptShown(!descriptShown)}>
+                    <div className={ descriptShown===true ? "pic-descript" : "hidden"}>{photo.description}</div>
+                    <img className="pic" src={photo.path} />
                 </div>
                 <div className="like-functions">
-                <div className="btn-box"><button className= {isLiked === true ? "liked" : "like-btn" }
-                        onClick={()=> toggleLike(photo.id)}>👍</button>
+                    <div className="btn-box">
+                        <button className= {isLiked === true ? "liked" : "like-btn" }
+                            onClick={()=> toggleLike(photo.id)}>👍</button>
                     </div>
-                    <div className="pic-likes">Likes:{photo.likes}</div>  
+                    <div className="pic-likes">
+                        Likes:{photo.likes}
+                    </div>  
                 </div>
             </li>
         </>
