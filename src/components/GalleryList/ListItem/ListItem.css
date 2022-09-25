@@ -6,12 +6,13 @@
     padding: 10px 0px;
     border-radius: .5em;
     background-color: white;
+    box-shadow: 5px 5px 10px -10px;
 
     display: flex;
     align-items: center;
     flex-direction: column;
 
-    box-shadow: 5px 5px 10px -10px;
+    
 }
 
 .hidden{
@@ -66,11 +67,20 @@
 
 .like-btn{
     color: transparent;
-    text-shadow: 0 0 #9b9b9b;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 2px;
+    box-shadow: 1px 1px 2px .6px rgb(224, 224, 224);
 }
 
 .liked{
-    background-color: lightblue;
-    text-shadow: 1px 1px #575757;
+    background-color: white;
+    box-shadow: 1px 1px 2px 0px rgb(199, 199, 199) inset;
+    padding: 2px;
+    border-radius: .2em;
+    border: none;
+    filter: hue-rotate(190deg) saturate(400%) brightness(95%);
 }
 

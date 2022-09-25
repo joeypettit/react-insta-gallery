@@ -1,0 +1,42 @@
+
+.full-screen-window{
+    height: 80vh;
+    width: 80vw;
+    background-color: rgba(0, 0, 0, 0.44);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+.full-screen-img{
+    height: 75vh;
+    width: 75vw;
+    object-fit: contain;
+}
+
+.full-screen-background{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.492);
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-exit{
+    position: absolute;
+    top: 0px;
+
+
+}
