@@ -1,3 +1,69 @@
+
+.pic-list-item{
+    list-style: none;
+    margin: 10px;
+    width: 150px;
+    padding: 10px 0px;
+    border-radius: .5em;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 7px 7px 10px -8px;
+}
+
+.hidden{
+    display: none;
+}
+
+.pic{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    
+}
+
+.pic-holder{
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.pic-descript{
+    position: absolute;
+    box-sizing: border-box;
+    height: inherit;
+    width: inherit;
+
+    font-size: small;
+    color: white;
+    background-color: #0000007b;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* like functions */
+
+.like-functions{
+    width: 150px;
+    padding: 4px 0px;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.pic-likes{
+    color: darkcyan;
+}
+
 .like-btn{
     color: transparent;
     text-shadow: 0 0 #9b9b9b;
@@ -7,3 +73,4 @@
     background-color: lightblue;
     text-shadow: 1px 1px #575757;
 }
+

@@ -26,11 +26,15 @@ function ListItem({photo, getGallery}){
     return (
         <>
             <li className = "pic-list-item">
-                <div className="pic-descript hidden">{photo.description}</div>
-                <img className="pic" src={photo.path}/>
-                <div className="pic-likes">Likes:{photo.likes}</div>
+                <div className="pic-holder">
+                    <div className="pic-descript ">{photo.description}</div>
+                    <img className="pic" src={photo.path}/>
+                </div>
+                <div className="like-functions">
                 <div className="btn-box"><button className= {isLiked === true ? "liked" : "like-btn" }
-                    onClick={()=> toggleLike(photo.id)}>👍</button>
+                        onClick={()=> toggleLike(photo.id)}>👍</button>
+                    </div>
+                    <div className="pic-likes">Likes:{photo.likes}</div>  
                 </div>
             </li>
         </>

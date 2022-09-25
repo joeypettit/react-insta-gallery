@@ -1,0 +1,13 @@
+#gallery-holder{
+    background-color: rgb(240, 242, 245) ;
+    padding: 10px;
+}
+
+#gallery-ul{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    max-width: 600px;
+}
