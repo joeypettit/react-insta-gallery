@@ -7,7 +7,6 @@ function GalleryList({galleryList, getGallery}){
     return(
         <>
             <div id="gallery-holder">
-                <h1>In GalleryList</h1>
                 <ul id="gallery-ul">
                     {galleryList.map((photo) => (
                         console.log("ID:" + photo.id),

@@ -1,0 +1,12 @@
+#banner-img{
+    width: 90vw;
+    height:200px;
+    object-fit: cover;
+    object-position: 0px bottom;
+    border-radius: 0em 0em .5em .5em;
+    box-shadow: 5px 5px 10px -10px;
+}
+
+#banner{
+    background-image: linear-gradient(rgba(0, 91, 61, 0.498), white);
+}

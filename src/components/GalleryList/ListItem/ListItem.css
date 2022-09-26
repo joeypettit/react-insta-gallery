@@ -3,15 +3,16 @@
     list-style: none;
     margin: 10px;
     width: 150px;
-    padding: 10px 0px;
+    padding: 10px 0px 5px 0px;
     border-radius: .5em;
     background-color: white;
+    box-shadow: 5px 5px 10px -10px;
 
     display: flex;
     align-items: center;
     flex-direction: column;
 
-    box-shadow: 5px 5px 10px -10px;
+    
 }
 
 .hidden{
@@ -38,6 +39,8 @@
     height: inherit;
     width: inherit;
 
+    padding: 3px;
+
     font-size: small;
     color: white;
     background-color: #0000007b;
@@ -51,9 +54,9 @@
 
 /* like functions */
 
-.like-functions{
+.btn-functions{
     width: 150px;
-    padding: 4px 0px;
+    padding: 2px 0px 0px 0px;
 
 
     display: flex;
@@ -61,16 +64,49 @@
     justify-content: space-around;
 }
 .pic-likes{
-    color: darkcyan;
+    color: rgba(0, 91, 61);
+    display: flex;
+    align-items: flex-end;
 }
 
 .like-btn{
     color: transparent;
-    text-shadow: 0 0 #9b9b9b;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 2px;
+    box-shadow: 1px 1px 2px .6px rgb(224, 224, 224);
 }
 
 .liked{
-    background-color: lightblue;
-    text-shadow: 1px 1px #575757;
+    background-color: white;
+    box-shadow: 1px 1px 2px 0px rgb(199, 199, 199) inset;
+    padding: 2px;
+    border-radius: .2em;
+    border: none;
+    filter: hue-rotate(90deg) saturate(30%);
 }
 
+/* full screen button */
+.fullscreen-btn{
+    color: transparent;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 2px;
+    box-shadow: 1px 1px 2px .6px rgb(224, 224, 224);
+
+    display: inline-flex;
+    align-items: center;
+   
+}
+
+.pressed-fullscreen{
+    background-color: white;
+    box-shadow: 1px 1px 2px 0px rgb(199, 199, 199) inset;
+    padding: 2px;
+    border-radius: .2em;
+    border: none;
+}
