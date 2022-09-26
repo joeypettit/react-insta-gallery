@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import Banner from '../Banner/Banner';
+import Header from '../Header/Header'
 
 function App() {
     const [galleryList, setGalleryList] = useState(['no values yet!']);
@@ -18,20 +20,15 @@ function App() {
       }).catch((error) => console.log(error));
     }
 
-
     useEffect(()=> {
       getGallery();
     }, []);
 
-
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
+        <Banner />
+        <Header />
         <GalleryList galleryList={galleryList} getGallery={getGallery}/>
-
-
 
       </div>
     );

@@ -64,7 +64,7 @@
     justify-content: space-around;
 }
 .pic-likes{
-    color: darkcyan;
+    color: rgba(0, 91, 61);
     display: flex;
     align-items: flex-end;
 }
@@ -85,7 +85,7 @@
     padding: 2px;
     border-radius: .2em;
     border: none;
-    filter: hue-rotate(190deg) saturate(400%) brightness(95%);
+    filter: hue-rotate(90deg) saturate(30%);
 }
 
 /* full screen button */
