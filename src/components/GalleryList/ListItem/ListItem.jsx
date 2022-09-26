@@ -37,15 +37,15 @@ function ListItem({photo, getGallery}){
                     <div className={ descriptShown===true ? "pic-descript" : "hidden"}>{photo.description}</div>
                     <img className="pic" src={photo.path} />
                 </div>
-                <div className="like-functions">
+                <div className="btn-functions">
                     <div className="btn-box">
                         <button className= {isLiked === true ? "liked" : "like-btn" }
                             onClick={()=> toggleLike(photo.id)}>👍</button>
-                        <button className="fullscreen-btn" onClick={()=> setIsFullScreen(true)}>Full</button>
                     </div>
                     <div className="pic-likes">
                         Likes:{photo.likes}
-                    </div>  
+                    </div>
+                    <button className={isFullScreen === false ? "fullscreen-btn" : "pressed-fullscreen" }onClick={()=> setIsFullScreen(true)}>[ ]</button>
                 </div>
             </li>
         </>
