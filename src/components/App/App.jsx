@@ -8,6 +8,7 @@ import AddPicForm from '../AddPicForm/AddPicForm';
 
 function App() {
     const [galleryList, setGalleryList] = useState(['no values yet!']);
+    const [addFormShown, setAddFormShown] = useState(false);
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <div className="App">
         <Banner />
         <Header />
+        <AddPicForm setAddFormShown={setAddFormShown}/>
         <GalleryList galleryList={galleryList} getGallery={getGallery}/>
         <AddPicForm getGallery={getGallery}/>
       </div>

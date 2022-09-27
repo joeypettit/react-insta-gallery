@@ -20,6 +20,8 @@ function AddPicForm() {
         <>
             <div className="full-screen-background">
                 <div id="add-pic-window">
+                    <button id="add-exit-btn" onClick={()=> setIsFullScreen(false)}>X</button>
+                    
                     <h2 id="add-header">Add A New Photo</h2>
                     <form id="add-form">
                         <label for="new-pic-url">Photo URL:</label>
