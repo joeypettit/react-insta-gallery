@@ -3,8 +3,6 @@ import './FullScreen.css';
 
 function FullScreen({setIsFullScreen, pic}){
 
-
-
     return (
         <div className ="full-screen-background" onClick={()=> setIsFullScreen(false)}>
             {/* e.stopPropagation keeps click of anything but background from closing modal */}
@@ -15,7 +13,6 @@ function FullScreen({setIsFullScreen, pic}){
         </div>
         
     )
-
 }
 
 export default FullScreen;
