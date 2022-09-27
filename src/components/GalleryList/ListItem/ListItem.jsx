@@ -10,9 +10,13 @@ function ListItem({photo, getGallery}){
     const [isFullScreen, setIsFullScreen] = useState(false);
 
     function toggleLike(photoId){
+        // assign variable to opposite of current like value (prior to rerender)
+        // this will be sent via data in the PUT request
+        const isLikedToPut = !isLiked
         axios({
             method: 'PUT',
             url: `/gallery/like/${photoId}`,
+            data: {isLiked: isLikedToPut}
         }).then((response) => {
             getGallery();
             setIsLiked(!isLiked);
@@ -20,7 +24,6 @@ function ListItem({photo, getGallery}){
         }).catch(error => {
             console.log('error in axios PUT (like)', error);
         })
-
     }
 
     return (
