@@ -10,8 +10,7 @@ router.put('/like/:id', (req, res) => {
     const galleryId = req.params.id;
     console.log('galleryID:', galleryId);
     
-    const isLiked = (req.body.isLiked === 'true'); // true or false, current user "likes" the photo
-                                        // req.body.isLiked is a string, must conver to boolean
+    const isLiked = req.body.isLiked; // true or false, current user "likes" the photo
     console.log('isLiked is:', isLiked);
     // set query text to add or subtract from total likes depending on if user likes or unlikes
     const queryText = isLiked ? `UPDATE "gallery" SET "likes"=("likes"+1) WHERE "id" = $1;`:
