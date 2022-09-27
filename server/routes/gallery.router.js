@@ -25,7 +25,7 @@ router.put('/like/:id', (req, res) => {
 // GET Route
 router.get('/', (req, res) => {
     // assign query text
-    const queryText = `SELECT * FROM "gallery";`
+    const queryText = `SELECT * FROM "gallery" ORDER BY "id";`
     // pool request and query response
     pool.query(queryText).then((response) => {
         console.log('SELECT * was successful');
@@ -39,12 +39,15 @@ router.get('/', (req, res) => {
 // POST Route (add new photo)
 router.post('/', (req, res) => {
     // assign req.body to variables (destructuring)
-    let {path, description} =req.body;
-
+    let {path, description} = req.body;
     // assign query text
-    const queryText = `INSERT INTO "gallery"`
-
-
+    const queryText =  `INSERT INTO "gallery" ("path", "description")
+                        VALUES ($1, $2);`
+    pool.query(queryText, [path, description])
+    .then(response => {
+        console.log('POST successful');
+        res.sendStatus(201);
+    }).catch(error => console.log('Error with POST', error));
 })
 
 module.exports = router;

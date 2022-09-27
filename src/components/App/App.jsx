@@ -4,6 +4,7 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header'
+import AddPicForm from '../AddPicForm/AddPicForm';
 
 function App() {
     const [galleryList, setGalleryList] = useState(['no values yet!']);
@@ -29,7 +30,7 @@ function App() {
         <Banner />
         <Header />
         <GalleryList galleryList={galleryList} getGallery={getGallery}/>
-
+        <AddPicForm getGallery={getGallery}/>
       </div>
     );
 }
