@@ -9,10 +9,6 @@ function ListItem({photo, getGallery}){
     const [descriptShown, setDescriptShown] = useState(false);
     const [isFullScreen, setIsFullScreen] = useState(false);
 
-
-
-
-    
     function toggleLike(photoId){
         axios({
             method: 'PUT',
@@ -50,8 +46,6 @@ function ListItem({photo, getGallery}){
             </li>
         </>
     )
-
-
 }
 
 export default ListItem;

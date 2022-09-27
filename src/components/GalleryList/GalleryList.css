@@ -2,6 +2,8 @@
     background-color: rgb(240, 242, 245) ;
     padding: 10px;
     border-top: .5px solid rgb(198, 200, 201);
+    display: flex;
+    justify-content: center;
 }
 
 #gallery-ul{

@@ -9,12 +9,14 @@ function GalleryList({galleryList, getGallery}){
             <div id="gallery-holder">
                 <ul id="gallery-ul">
                     {galleryList.map((photo) => (
+                        console.log('Photo Id is:', photo.id),
                         console.log("ID:" + photo.id),
-                        <ListItem key={"ID:" + photo.id} getGallery={getGallery} photo={photo}/> 
+                        <ListItem key={photo.id} getGallery={getGallery} photo={photo}/> 
                     ))}
                 </ul>
             </div>
         </>
     )
 }
+
 export default GalleryList;
