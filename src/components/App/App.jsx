@@ -30,9 +30,9 @@ function App() {
       <div className="App">
         <Banner />
         <Header />
-        <AddPicForm setAddFormShown={setAddFormShown}/>
-        <GalleryList galleryList={galleryList} getGallery={getGallery}/>
-        <AddPicForm getGallery={getGallery}/>
+        <GalleryList galleryList={galleryList} getGallery={getGallery} setAddFormShown={setAddFormShown}/>
+
+        {addFormShown && <AddPicForm getGallery={getGallery} addFormShown={addFormShown} setAddFormShown = {setAddFormShown}/>}
       </div>
     );
 }

@@ -2,7 +2,7 @@ import axios from "axios";
 import {useState} from 'react';
 import './AddPicForm.css';
 
-function AddPicForm() {
+function AddPicForm({addFormShown, setAddFormShown}) {
     const [urlIn, setUrlIn] = useState('');
     const [descriptIn, setDescriptIn] = useState('');
 
@@ -18,9 +18,9 @@ function AddPicForm() {
 
     return(
         <>
-            <div className="full-screen-background">
-                <div id="add-pic-window">
-                    <button id="add-exit-btn">X</button>
+            <div className="full-screen-background" onClick={()=> setAddFormShown(false)}>
+                <div id="add-pic-window" onClick={(e)=>{e.stopPropagation()}}>
+                    <button id="add-exit-btn" onClick={()=> setAddFormShown(false)}>X</button>
 
                     <h2 id="add-header">Add A New Photo</h2>
                     <form id="add-form">
