@@ -7,16 +7,13 @@ const pool = require('../modules/pool');
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
+    // set req.params.id to variable
     const galleryId = req.params.id;
-    console.log('galleryID:', galleryId);
-    
+    // set isLiked (from body) to variable
     const isLiked = req.body.isLiked; // true or false, current user "likes" the photo
-    console.log('isLiked is:', isLiked);
     // set query text to add or subtract from total likes depending on if user likes or unlikes
     const queryText = isLiked ? `UPDATE "gallery" SET "likes"=("likes"+1) WHERE "id" = $1;`:
                                 `UPDATE "gallery" SET "likes"=("likes"-1) WHERE "id" = $1;`;
-                                
-
     // pool request
     pool.query(queryText, [galleryId])
     .then(() => {
@@ -28,16 +25,29 @@ router.put('/like/:id', (req, res) => {
 // GET Route
 router.get('/', (req, res) => {
     // assign query text
-    const queryText = `SELECT * FROM "gallery";`
-
-    // pool request  and query response
+    const queryText = `SELECT * FROM "gallery" ORDER BY "id";`
+    // pool request and query response
     pool.query(queryText).then((response) => {
-        console.log('SELECT * COMPLETE');
+        console.log('SELECT * was successful');
         res.send(response.rows);
     }).catch((error)=> {
         console.log('Error with SELECT *', error);
         res.sendStatus(500);
     })
 }); // END GET Route
+
+// POST Route (add new photo)
+router.post('/', (req, res) => {
+    // assign req.body to variables (destructuring)
+    let {path, description} = req.body;
+    // assign query text
+    const queryText =  `INSERT INTO "gallery" ("path", "description")
+                        VALUES ($1, $2);`
+    pool.query(queryText, [path, description])
+    .then(response => {
+        console.log('POST successful');
+        res.sendStatus(201);
+    }).catch(error => console.log('Error with POST', error));
+})
 
 module.exports = router;

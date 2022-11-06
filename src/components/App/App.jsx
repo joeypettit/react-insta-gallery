@@ -4,16 +4,18 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header'
+import AddPicForm from '../AddPicForm/AddPicForm';
 
 function App() {
     const [galleryList, setGalleryList] = useState(['no values yet!']);
+    const [addFormShown, setAddFormShown] = useState(false);
 
 
 
     function getGallery() {
       axios({
         method: 'GET',
-        url: '/gallery/',
+        url: '/gallery/'
       }).then((response) => {
         console.log('GET completed', response.data);
         setGalleryList(response.data);
@@ -28,8 +30,9 @@ function App() {
       <div className="App">
         <Banner />
         <Header />
-        <GalleryList galleryList={galleryList} getGallery={getGallery}/>
+        <GalleryList galleryList={galleryList} getGallery={getGallery} setAddFormShown={setAddFormShown}/>
 
+        {addFormShown && <AddPicForm getGallery={getGallery} addFormShown={addFormShown} setAddFormShown = {setAddFormShown}/>}
       </div>
     );
 }
