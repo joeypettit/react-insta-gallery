@@ -30,7 +30,7 @@ function AddPicForm({addFormShown, setAddFormShown}) {
 
                         <lable for="new-pic-descript">Description:</lable>
                         <textarea id="new-pic-descript" type="text" placeholder= "Describe your photo!"
-                        value={descriptIn} onChange={(event)=> setDescriptIn(event.target.value)}/>
+                            value={descriptIn} onChange={(event)=> setDescriptIn(event.target.value)}/>
                         <button type="button" onClick={() => postNewPic()}>Add Photo</button>
                     </form>
                 </div>

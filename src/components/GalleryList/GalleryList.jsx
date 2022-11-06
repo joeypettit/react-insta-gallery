@@ -7,7 +7,7 @@ function GalleryList({galleryList, getGallery, setAddFormShown}){
     return(
         <>
             <div id="gallery-holder">
-                <button onClick = {()=>setAddFormShown(true)}>Add New Photo</button>
+                <button className="add-btn" onClick = {()=>setAddFormShown(true)}>Add New Photo</button>
                 <ul id="gallery-ul">
                     {galleryList.map((photo) => (
                         console.log('Photo Id is:', photo.id),

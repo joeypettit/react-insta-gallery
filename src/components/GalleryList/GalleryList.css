@@ -4,6 +4,8 @@
     border-top: .5px solid rgb(198, 200, 201);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #gallery-ul{
@@ -13,4 +15,36 @@
     flex-wrap: wrap;
     
     max-width: 600px;
+}
+
+.add-btn{
+    color: gray;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 8px;
+    box-shadow: 1px 1px 2px .6px rgb(224, 224, 224);
+}
+
+.add-btn-down{
+    color:gray;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 8px;
+    box-shadow: 3px 3px 2px .6px rgb(224, 224, 224) inset;
+}
+
+
+
+.add-btn:hover{
+    color:gray;
+    background-color: white;
+    border:none;
+    border-radius: .2em;
+    text-shadow: 0 0 #d4d4d4;
+    padding: 8px;
+    box-shadow: 3px 3px 2px .6px rgb(224, 224, 224);
 }
