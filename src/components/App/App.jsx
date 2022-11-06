@@ -15,7 +15,7 @@ function App() {
     function getGallery() {
       axios({
         method: 'GET',
-        url: '/gallery/',
+        url: '/gallery/'
       }).then((response) => {
         console.log('GET completed', response.data);
         setGalleryList(response.data);
